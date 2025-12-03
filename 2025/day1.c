@@ -1,5 +1,4 @@
 #include "../types.h"
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,8 +12,8 @@ int main(int argc, char **argv) {
     return 0;
   }
 
-  const u8 mode = atoi(argv[1]);
-  if (mode > 2 || mode < 1) {
+  const u8 part = atoi(argv[1]);
+  if (part > 2 || part < 1) {
     info(argv[0]);
     return 0;
   }
@@ -30,7 +29,7 @@ int main(int argc, char **argv) {
   i32 pos = 50;
   char line[256];
 
-  if (mode == 1) {
+  if (part == 1) {
     while (fgets(line, sizeof(line), file)) {
       const char *num_str = &line[1];
       i32 rotation = atoi(num_str);
@@ -50,7 +49,7 @@ int main(int argc, char **argv) {
       if (pos == 0)
         ++count;
     }
-  } else if (mode == 2) {
+  } else if (part == 2) {
     while (fgets(line, sizeof(line), file)) {
       const char *num_str = &line[1];
       const i32 clicks = atoi(num_str);
