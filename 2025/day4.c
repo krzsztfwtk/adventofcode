@@ -77,10 +77,11 @@ int main() {
         u8 neighborRollsCount = 0;
 
         for (i32 dy = -1; dy <= 1; ++dy) {
+          const u32 newY = y + dy;
+          const u32 rowIdx = newY * SIZE;
+
           for (i32 dx = -1; dx <= 1; ++dx) {
             const u32 newX = x + dx;
-            const u32 newY = y + dy;
-            const u32 rowIdx = newY * SIZE;
 
             if (newX < SIZE && newY < SIZE) {
               const u32 newIdx = rowIdx + newX;
