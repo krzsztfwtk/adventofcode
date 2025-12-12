@@ -12,8 +12,8 @@ typedef struct {
 Point points[MAX_POINTS_NUM];
 
 static inline u64 calculateArea(const Point p1, const Point p2) {
-  const u64 width = abs(p1.x - p2.x) + 1;
-  const u64 height = abs(p1.y - p2.y) + 1;
+  const u64 width = llabs(p1.x - p2.x) + 1;
+  const u64 height = llabs(p1.y - p2.y) + 1;
 
   return width * height;
 }
